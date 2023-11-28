@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background-color: #3498db;
+            color: #fff;
+        }
+
+        .navbar {
+            background-color: #d1d4d7;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .navbar a {
+            color: #090909;
+            font-family:serif;
+            text-decoration: none;
+            padding: 13px;
+        
+        }
+
+        .dashboard {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        #uploadButton {
+            padding: 7px;
+            background-color: #2ecc71;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #profile-icon {
+            position: relative;
+            cursor: pointer;
+        }
+
+        #profile-icon img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        #profile-dropdown {
+            display:none;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background-color: #2980b9;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        #profile-icon.show #profile-dropdown {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: #fff;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #3498db;
+        }
+
+        .footer {
+            color: black;
+            background-color: white;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .dashboard {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            #uploadButton {
+                flex-direction: row;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <a href="#">Home</a>
+    <a href="#">Projects</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+</div>
+<p >To upload a file ,Click below:</p>
+<div class="dashboard">
+    <div>
+        <input type="file" id="uploadButton">
+    </div>
+    <div id="profile-icon" class="dropdown" onclick = "myfun()">
+        <img src="123.jpg" alt="Profile">
+        <div id="profile-dropdown" class="dropdown-content">
+            <a href="#">Profile</a>
+            <a href="#">Settings</a>
+            <a href="#">Logout</a>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+     2023 Awesome Dashboard.<br> All rights reserved.
+</div>
+
+<script>
+        function myfun() {
+         document.getElementById('profile-icon').classList.toggle('show');
+    }
+</script>
+
+</body>
+</html>
